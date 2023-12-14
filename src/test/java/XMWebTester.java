@@ -14,7 +14,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-
 public class XMWebTester {
 
     final String xm_url = "https://xm.com";
