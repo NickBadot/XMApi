@@ -57,7 +57,7 @@ public class XMWebTester {
     }
 
     @Test
-    void testCalendarSlider() throws InterruptedException, ParseException {
+    void testCalendarSlider()  {
         navigateToEconomicCalendar();
         assert validateCalendarSlider(TODAY);
         assert validateCalendarSlider(TOMORROW);
