@@ -1,4 +1,26 @@
+Automation testing task #1 (UI)
+Resource: xm.com
+Tools: Java AND (Selenide OR Selenium OR &lt;your_choice&gt;)
+Task: Automate next use case to run in three different browser’s screen resolution:
+1) Maximum (supported by your display)
+2) 1024 x 768
+3) 800 x 600
+Use Case:
+1. Open Home page (make any check here if needed).
+2. Click the &lt;Research and Education&gt; link located at the top menu (make any check
+here if needed).
+3. Click 'Economic Calendar' link in the opened menu (make any check here if
+needed).
+4. Select Today on Slider and check that the date is correct.
+5. Select Tomorrow on Slider and check that the date is correct.
+6. Select Next Week; on Slider and check that the date is correct.
+7. Click 'Educational Videos' link under &lt;Research and Education&gt;
+8. Click the Lesson 1.1 “Introduction to the Financial Markets.”
+9. Educational video should play for a minimum of 5 seconds
 
+At the end: Deliver the code using a public code repository (e.g. github).
+Push your new repository into your account and send us the links to your repository, so
+we can run it on our local PC.
 
 Automation testing task #2 (API)
 Resource: https://swapi.dev/
