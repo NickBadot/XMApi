@@ -1,4 +1,5 @@
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,7 +28,7 @@ public class XMWebTester {
 
     @BeforeClass
     void setupDriver() {
-        this.driver = new FirefoxDriver();
+        this.driver = getWebDriver("Firefox");
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         this.waiter = new WebDriverWait(this.driver, Duration.ofSeconds(10));  // to wait for specific events
         this.js = (JavascriptExecutor) this.driver;
@@ -75,6 +76,13 @@ public class XMWebTester {
         // We validate  for +/- 1 second from the target to account for asynchronicity
         assert time_text.equals("00:05") || time_text.equals("00:04") || time_text.equals("00:06");
 
+    }
+
+    public WebDriver getWebDriver(String choice){
+        if (choice.equals("Chrome")){
+            return new ChromeDriver();
+        }
+        else return new FirefoxDriver();
     }
 
     public void navigateHomePage() {
