@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.DayOfWeek;
@@ -36,9 +37,13 @@ public class XMWebTester {
         removeCookiePopup();
     }
 
+    @BeforeMethod
+    void freshStart() {
+        navigateHomePage();
+    }
+
     @AfterClass
-    void tearDown() throws InterruptedException {
-        Thread.sleep(10000);
+    void tearDown() {
         this.driver.close();
     }
 
@@ -57,8 +62,9 @@ public class XMWebTester {
     }
 
     @Test
-    void testCalendarSlider()  {
+    void testCalendarSlider() {
         navigateToEconomicCalendar();
+        switchTocalendarFrame();
         assert validateCalendarSlider(TODAY);
         assert validateCalendarSlider(TOMORROW);
         assert validateCalendarSlider(NEXT_WEEK);
@@ -78,11 +84,10 @@ public class XMWebTester {
 
     }
 
-    public WebDriver getWebDriver(String choice){
-        if (choice.equals("Chrome")){
+    public WebDriver getWebDriver(String choice) {
+        if (choice.equals("Chrome")) {
             return new ChromeDriver();
-        }
-        else return new FirefoxDriver();
+        } else return new FirefoxDriver();
     }
 
     public void navigateHomePage() {
@@ -145,9 +150,12 @@ public class XMWebTester {
         return date.equals(expected.toString());
     }
 
-    public boolean validateCalendarSlider(int day) {
+    public void switchTocalendarFrame() {
         WebElement calendar_frame = this.driver.findElement(By.id("iFrameResizer0"));
         driver.switchTo().frame(calendar_frame);
+    }
+
+    public boolean validateCalendarSlider(int day) {
         WebElement slider = this.driver.findElement(By.xpath("//mat-slider[@role='slider']"));
         setSlider(slider, day);
         return validateDate(getCalendarDate(), day);
