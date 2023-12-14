@@ -1,0 +1,75 @@
+{
+  "$schema": "https://swapi.dev/api/people/",
+  "type": "object",
+  "properties": {
+    "name" : {
+              "type" : "string"
+            },
+    "height" : {
+      "type" : "string"
+    },
+    "mass" : {
+      "type" : "string"
+    },
+    "hair_colour" : {
+      "type" : "string"
+    },
+    "skin_colour" : {
+      "type" : "string"
+    },
+    "eye_colour" : {
+      "type" : "string"
+    },
+    "birth_year" : {
+      "type" : "string"
+    },
+    "gender" : {
+      "type" : "string"
+    },
+    "homeworld" : {
+      "type" : "string"
+    },
+    "films" : {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "species" : {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "vehicles" : {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "starships" : {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "created" : {
+      "type" : "string"
+  },
+    "edited" : {
+      "type" : "string"
+    },
+    "created" : {
+      "url" : "string"
+    }
+  },
+  "required" : ["name", "films", "url"]
+}

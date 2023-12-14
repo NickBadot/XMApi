@@ -1,0 +1,16 @@
+
+
+Automation testing task #2 (API)
+Resource: https://swapi.dev/
+Endpoints examples:
+ find in site tutorial
+Tools: Java AND (Rest Assured OR &lt;your_choice&gt;)
+Use Cases:
+1. Find the film with latest release date.
+2. Using previous response (1) find the tallest person among the characters that
+were part of that film.
+3. Find the tallest person ever played in any Star Wars film.
+4. Create contract (Json schema validation) test for /people API.
+At the end: Deliver the code using a public code repository (e.g. github).
+Push your new repository into your account and send us the links to your repository, so
+we can run it on our local PC.
